@@ -45,6 +45,7 @@ else:
 if USER and PASSWORD:
     # MySQL & PostgreSQL case
     dbString = ENGINE + separator + '%s:%s@%s/%s' % (USER, PASSWORD, HOST, DATABASE)
+    print "SQLAlchemy connect string:", dbString
 else:
     # SQLite case
     dbString = ENGINE + separator + '%s' % (DATABASE)
@@ -192,3 +193,4 @@ conn.close()
 
 elapsed = (time.time() - start)
 print "%d seconds!" % elapsed
+
